@@ -1,0 +1,21 @@
+<script src="./ext/vue.min.js"></script>
+<script src="./ext/hls.min.js"></script>
+<script src="./ext/jquery-1.8.3.js"></script>
+
+<div id="app-4">
+  <div id="wf">
+    <div>
+      <input v-model="querywd" v-bind:placeholder="placeholder" size="50" type='text'/>
+      <button v-on:click="querypage">查询</button>
+    </div>
+    <!-- <video id="video" controls style="float:left;max-height: 900px;min-height: 340px"></video> -->
+    <div v-for="(item,index) in getlist_rsp.data" class="unit">
+      <div style="float:left;padding:3px;max-width:200px;max-height:300px;">
+        <img v-bind:src="item.imageUrl" style="width:180px;height:230px;">
+        <p><a v-bind:href="item.url">{{ item.title }}</a></p>
+        <p>{{ item.msg }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="test.js"></script>
